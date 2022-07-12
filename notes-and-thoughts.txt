@@ -1,0 +1,5 @@
+- need a movie card component that can be reused throughout the application.
+- since a few pages will have the movie card component but will have additional buttons/actions, 
+    possibly pass the movie card component through additional components that have the needed 
+    buttons/actions.
+- have one api request component that works for all the requesting components(addmovies and wanted)
