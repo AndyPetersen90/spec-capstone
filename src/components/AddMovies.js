@@ -1,5 +1,6 @@
 import React from "react";
 import ManualMovieAdd from "./ManualMovieAdd";
+import MovieApi from "./MovieApi";
 import MovieCard from "./MovieCard";
 
 const AddMovies = () => {
@@ -7,7 +8,7 @@ const AddMovies = () => {
     <div>
       AddMovies
       <br />
-      -add movie search input(movie search component?)
+      <MovieApi />
       <br />
       -manually add movie form(manually add movie component?)
       <br /> -movie title

@@ -1,5 +1,6 @@
 import React from "react";
 import ManualMovieAdd from "./ManualMovieAdd";
+import MovieApi from "./MovieApi";
 import MovieCard from "./MovieCard";
 
 const MyWants = () => {
@@ -7,7 +8,7 @@ const MyWants = () => {
     <div>
       MyWants titles
       <br />
-      add a movie to wanted list search(search component?)
+      <MovieApi />
       <br />
       add movie manually to wanted list(manually add a movie component?)
       <br />

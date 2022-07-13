@@ -1,5 +1,6 @@
 import React from "react";
 import MovieCard from "./MovieCard";
+import MovieInfo from "./MovieInfo";
 
 const MyCollection = () => {
   return (
@@ -22,6 +23,7 @@ const MyCollection = () => {
       <br />
       -page changing options
       <MovieCard />
+      <MovieInfo />
     </div>
   );
 };
