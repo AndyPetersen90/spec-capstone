@@ -18,7 +18,7 @@ const App = () => {
         <Route path="addmovies" element={<AddMovies />} />
         <Route path="mywants" element={<MyWants />} />
       </Routes>
-      {/* <img
+      {/* <img className="page-background-image"
         src="https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbWlzY2VtcHR5cm9vbS1mb24tcm9vbS10eXBlMS1saWdodDItMDEuanBn.jpg"
         alt="background-img"
       /> */}

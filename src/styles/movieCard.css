@@ -1,9 +1,40 @@
-- need a movie card component that can be reused throughout the application.
-- since a few pages will have the movie card component but will have additional buttons/actions, 
-    possibly pass the movie card component through additional components that have the needed 
-    buttons/actions.
-- have one api request component that works for all the requesting components(addmovies and wanted)
+.movie-card-section {
+  border-radius: 3%;
+  box-shadow: 1px 1px 10px 3px #a8a8a8;
+  background-color: black;
+  width: 16vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
 
+.movie-card-title {
+  color: aliceblue;
+  margin: 0%;
+  padding: 4px;
+  display: flex;
+}
+
+.movie-card-image {
+  display: flex;
+  justify-self: center;
+  border-radius: 5%;
+  max-height: 80%;
+  max-width: 80%;
+  box-shadow: 1px 1px 4px 3px #d7d7d75c;
+}
+
+button.movie-card-rating {
+  color: aliceblue;
+  background-color: black;
+  margin: 0%;
+  padding: 4px;
+  display: flex;
+  border-style: none;
+}
 
 /*
     Determine my breakpoints of when the design starts to break down
