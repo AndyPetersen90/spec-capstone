@@ -1,7 +1,6 @@
 import React from "react";
 import ManualMovieAdd from "./ManualMovieAdd";
 import MovieApi from "./MovieApi";
-import MovieCard from "./MovieCard";
 
 const AddMovies = () => {
   return (
@@ -21,7 +20,6 @@ const AddMovies = () => {
       component
       <br />
       -each returned movie card will have an add button
-      <MovieCard />
       <ManualMovieAdd />
     </div>
   );
