@@ -13,15 +13,12 @@ const MovieApi = () => {
   const [data, setData] = useState({});
   const [search, setSearch] = useState("");
 
-  // https://movie-database-alternative.p.rapidapi.com/?rapidapi-key=08db3516dbmshf77fe5aa2f93c04p1d7d4fjsn27952713b8f2&s=avengers&r=json
-
   const apiCall = async () => {
     if (search) {
       const options = {
         method: "GET",
         url: "https://movie-database-alternative.p.rapidapi.com/",
         headers: {
-          // "X-RapidAPI-Key": "08db3516dbmshf77fe5aa2f93c04p1d7d4fjsn27952713b8f2",
           "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
           "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
         },
@@ -37,6 +34,8 @@ const MovieApi = () => {
           console.error(error);
         });
     }
+
+    setSearch("");
   };
 
   return (
