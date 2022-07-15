@@ -1,5 +1,5 @@
 import React from "react";
-import MovieCard from "./MovieCard";
+// import MovieCard from "./MovieCard";
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
       -snapshot of favorite movies
       <br />
       -snapshot of movies to get
-      <MovieCard />
+      {/* <MovieCard /> */}
     </div>
   );
 };

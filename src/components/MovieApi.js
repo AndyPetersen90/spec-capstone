@@ -10,7 +10,7 @@ import axios from "axios";
 **************************************************************************/
 
 const MovieApi = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
 
   const apiCall = async () => {
@@ -25,10 +25,10 @@ const MovieApi = () => {
         params: { s: search, r: "json", page: "1" },
       };
 
-      axios
+      await axios
         .request(options)
         .then(function (response) {
-          setData(response.data);
+          setData(response.data.Search);
         })
         .catch(function (error) {
           console.error(error);
@@ -48,7 +48,7 @@ const MovieApi = () => {
         placeholder="Movie Title"
       />
       <button onClick={apiCall}>Search</button>
-      <MovieApiResponse data={data.Search} />
+      <MovieApiResponse data={data} />
     </div>
   );
 };

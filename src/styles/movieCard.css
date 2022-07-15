@@ -1,4 +1,5 @@
 .movie-card-section {
+  margin: 0.5%;
   border-radius: 3%;
   box-shadow: 1px 1px 10px 3px #a8a8a8;
   background-color: black;
@@ -27,7 +28,7 @@
   box-shadow: 1px 1px 4px 3px #d7d7d75c;
 }
 
-button.movie-card-rating {
+.movie-card-rating {
   color: aliceblue;
   background-color: black;
   margin: 0%;

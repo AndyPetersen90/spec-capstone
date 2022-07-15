@@ -1,5 +1,5 @@
 import React from "react";
-import MovieCard from "./MovieCard";
+// import MovieCard from "./MovieCard";
 
 const Favorites = () => {
   return (
@@ -9,7 +9,7 @@ const Favorites = () => {
       -favorites list section (max of 10 favorites)
       <br />
       -will use the movie card component to display posters and titles
-      <MovieCard />
+      {/* <MovieCard /> */}
     </div>
   );
 };

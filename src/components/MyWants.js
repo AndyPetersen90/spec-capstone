@@ -1,7 +1,7 @@
 import React from "react";
 import ManualMovieAdd from "./ManualMovieAdd";
 import MovieApi from "./MovieApi";
-import MovieCard from "./MovieCard";
+// import MovieCard from "./MovieCard";
 
 const MyWants = () => {
   return (
@@ -14,7 +14,7 @@ const MyWants = () => {
       <br />
       list of wanted movies using movie card component and additional component
       for a button to add to collection or delete from wanted section.
-      <MovieCard />
+      {/* <MovieCard /> */}
       <ManualMovieAdd />
     </div>
   );

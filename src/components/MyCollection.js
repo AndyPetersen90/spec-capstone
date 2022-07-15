@@ -1,5 +1,5 @@
 import React from "react";
-import MovieCard from "./MovieCard";
+// import MovieCard from "./MovieCard";
 import MovieInfo from "./MovieInfo";
 
 const MyCollection = () => {
@@ -22,7 +22,7 @@ const MyCollection = () => {
       -15 movies per page
       <br />
       -page changing options
-      <MovieCard />
+      {/* <MovieCard /> */}
       <MovieInfo />
     </div>
   );
