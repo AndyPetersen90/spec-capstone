@@ -1,3 +1,15 @@
+# Welcome to my DevMountain Capstone Project:
+
+-This was created using npx create react app
+-my db model is at the root folder and is named DBDesigner-screenshot.png
+
+This project has been built to solve an problem I have. Currently I own about 300 various dvds and BluRay movies.
+Each year my family receives 20-30 more movies from my wifes family. We are now struggling to keep track of the movies
+we already own, and what movies we do not own.
+
+This webapp will allow my family to track and save the titles and information for all the movies we own, while also being able to create
+a list of movies we would like to own in the future.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
