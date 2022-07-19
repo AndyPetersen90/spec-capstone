@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import MyCollection from "./components/MyCollection";
-import Favorites from "./components/Favorites";
+// import Favorites from "./components/Favorites";
 import AddMovies from "./components/AddMovies";
 import MyWants from "./components/MyWants";
 import MovieInfo from "./components/MovieInfo";
@@ -15,7 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mycollection" element={<MyCollection />} />
-        <Route path="/favorites" element={<Favorites />} />
+        {/* <Route path="/favorites" element={<Favorites />} /> */}
         <Route path="/addmovies" element={<AddMovies />} />
         <Route path="/mywants" element={<MyWants />} />
         <Route path="/movieinfo" element={<MovieInfo />} />

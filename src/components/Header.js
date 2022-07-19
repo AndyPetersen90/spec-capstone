@@ -14,9 +14,9 @@ const Header = () => {
         <Link to="addmovies">
           <button className="Nav-button">Add Movie</button>
         </Link>
-        <Link to="/favorites">
+        {/* <Link to="/favorites">
           <button className="Nav-button">My Favorites</button>
-        </Link>
+        </Link> */}
         <Link to="/mywants">
           <button className="Nav-button">My Wants</button>
         </Link>

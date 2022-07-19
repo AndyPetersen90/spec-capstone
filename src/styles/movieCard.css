@@ -37,6 +37,13 @@
   border-style: none;
 }
 
+.imdbID-element {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  top: 20vh;
+}
+
 /*
     Determine my breakpoints of when the design starts to break down
     thats when I need to set media queries to make adjustments.
