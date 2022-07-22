@@ -1,0 +1,35 @@
+.nav-header {
+  margin: 0%;
+  padding: 0%;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-wrapper {
+  display: flex;
+  width: max-content;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Nav-button {
+  margin: 0.5%;
+  padding: 5%;
+  width: 15vw;
+  background-color: rgb(216 216 216);
+  border-radius: 50px;
+  font-size: 175%;
+  border: none;
+  border-color: aliceblue;
+  box-shadow: inset 0px 0px 11px 5px;
+  align-items: center;
+  flex-wrap: nowrap;
+}

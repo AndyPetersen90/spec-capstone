@@ -1,36 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import MovieCard from "./MovieCard";
+import MovieFilter from "./MovieFilter";
 
 const GetCollection = () => {
+  const [collectedMovies, setCollectedMovies] = useState([]);
+
   const getMovieCollection = () => {
     var config = {
       method: "get",
       url: "/mycollection",
       headers: {},
     };
-
     axios(config)
       .then(function (response) {
         console.log(response.data);
-        const movieCollection = response.data;
-        return movieCollection;
+        setCollectedMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
-    // return movieCollection;
   };
 
-  getMovieCollection();
+  useEffect(() => {
+    getMovieCollection();
+  }, []);
+
+  collectedMovies.sort((a, b) => {
+    let fa = a.movie_title.toLowerCase(),
+      fb = b.movie_title.toLowerCase();
+
+    if (fa < fb) {
+      return -1;
+    }
+    if (fa > fb) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <div>
-      {/* <section className="movie-api-response-section">
-        {movieCollection.map((data) => (
-          <MovieCard data={data} />
-        ))}
-      </section> */}
+      <MovieFilter
+        data={collectedMovies}
+        location={"inMovieCollection"}
+        getMovieCollection={getMovieCollection}
+        GetCollection={GetCollection}
+      />
     </div>
   );
 };

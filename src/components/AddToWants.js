@@ -1,13 +1,12 @@
 import React from "react";
-// import ManualMovieAdd from "./ManualMovieAdd";
 import MovieApi from "./MovieApi";
 
-const AddMovies = () => {
+const AddToWants = () => {
   return (
     <div>
-      AddMovies
+      Add A Movie To your Wants List.
       <br />
-      <MovieApi location={"addToCollection"} />
+      <MovieApi location={"addToWants"} />
       -section to display returned movie search information using the movie card
       component
       <br />
@@ -16,4 +15,4 @@ const AddMovies = () => {
   );
 };
 
-export default AddMovies;
+export default AddToWants;

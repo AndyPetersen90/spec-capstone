@@ -2,7 +2,7 @@
   margin: 0.5%;
   border-radius: 3%;
   box-shadow: 1px 1px 10px 3px #a8a8a8;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.095);
   width: 16vw;
   height: 40vh;
   display: flex;
@@ -30,7 +30,7 @@
 
 .movie-card-rating {
   color: aliceblue;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   margin: 0%;
   padding: 4px;
   display: flex;

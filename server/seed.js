@@ -64,7 +64,7 @@ module.exports = {
     );
     
     insert into movie_table (movie_title, movie_poster, movie_genre, movie_actors, movie_plot, movie_rating, movie_release_date)
-      values ('Avengers: Endgame', 'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg', 'Action, Adventure, Drama', 'Robert Downey Jr., Chris Evans, Mark Ruffalo', 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.', 'PG-13', '26 Apr 2019' );
+      values ('Avengers: Endgame', 'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg', 'Action, Adventure, Drama', 'Robert Downey Jr., Chris Evans, Mark Ruffalo', 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.', 'PG-13', '2019' );
     
     insert into users (first_name, last_name, username, password)
       values ('Andrew', 'Petersen', 'TheManFes', '1234Fes');

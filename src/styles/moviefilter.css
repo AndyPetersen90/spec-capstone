@@ -1,0 +1,97 @@
+.add-form-div-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/********************* AddMovie classes*****************/
+
+.add-collection-wrapper {
+  display: flex;
+}
+
+.add-movie-button {
+  /* display: flex; */
+  margin: 0.5%;
+  padding: 5%;
+  width: 15vw;
+  background-color: rgb(216 216 216);
+  border-radius: 50px;
+  font-size: 175%;
+  border: none;
+  border-color: aliceblue;
+  box-shadow: inset 0px 0px 11px 5px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.dropdown-form {
+  display: flex;
+  flex-direction: row;
+}
+/********************* Filtering Section *****************/
+
+.genre-dropdown {
+  display: flex;
+  margin: 0.5%;
+  padding: 0.5%;
+  width: 15vw;
+  background-color: rgb(216 216 216);
+  border-radius: 50px;
+  font-size: 175%;
+  border: none;
+  border-color: aliceblue;
+  box-shadow: inset 0px 0px 11px 5px;
+  text-align: center;
+  flex-wrap: nowrap;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.rating-dropdown {
+  display: flex;
+  margin: 0.5%;
+  padding: 0.5%;
+  width: 15vw;
+  background-color: rgb(216 216 216);
+  border-radius: 50px;
+  font-size: 175%;
+  border: none;
+  border-color: aliceblue;
+  box-shadow: inset 0px 0px 11px 5px;
+  text-align: center;
+  flex-wrap: nowrap;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.dropdown-reset-button {
+  display: flex;
+  margin: 0.5%;
+  padding: 0.5%;
+  width: 15vw;
+  background-color: rgb(216 216 216);
+  border-radius: 50px;
+  font-size: 175%;
+  border: none;
+  border-color: aliceblue;
+  box-shadow: inset 0px 0px 11px 5px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/*************** Movie Card Section *******************/
+
+.movie-api-response-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

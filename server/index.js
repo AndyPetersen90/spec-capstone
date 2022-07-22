@@ -6,6 +6,7 @@ const { seed } = require("./seed.js");
 const {
   getAllMovies,
   addMovie,
+  getAllWants,
   addToWants,
   addFromWants,
   deleteMovie,
@@ -20,10 +21,11 @@ app.use(cors());
 
 app.get("/mycollection", getAllMovies);
 app.post("/addcollection", addMovie);
-app.post("/wants", addToWants);
+app.get("/wants", getAllWants);
+app.post("/addtowants", addToWants);
 // app.post("/wants", addToFavorites);
 app.post("/fromwants", addFromWants);
-app.delete("/deletecollection/:id", deleteMovie);
+app.delete("/deletecollection", deleteMovie);
 
 //server//
 app.post("/seed", seed);

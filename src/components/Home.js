@@ -1,19 +1,12 @@
 import React from "react";
-// import MovieCard from "./MovieCard";
+import "../styles/homepage.css";
 
 const Home = () => {
   return (
-    <div>
-      Home
-      <br />
-      -Welcome message with name
-      <br />
-      -snapshot of Most Recent additions
-      <br />
-      -snapshot of favorite movies
-      <br />
-      -snapshot of movies to get
-      {/* <MovieCard /> */}
+    <div className="welcome-text-div">
+      <p className="home-welcome-main">Welcome to your Movie Collection!</p>
+      <p className="home-welcome-text">You can View your Movie Collection</p>
+      <p className="home-welcome-text">Or view the Movies you Want.</p>
     </div>
   );
 };

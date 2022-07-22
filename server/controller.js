@@ -25,47 +25,7 @@ module.exports = {
       });
   },
 
-  addMovieToDatabase: (req, res) => {
-    console.log(req.body);
-    const { Title, Poster, Genre, Actors, Plot, Rated, Released } = req.body;
-    sequelize
-      .query(
-        `
-      insert into movie_table (movie_title, movie_genre, movie_actors, movie_plot, movie_rating, movie_release_date)
-        values ('${Title}', '${Poster}', '${Genre}', '${Actors}', '${Plot}', '${Rated}', '${Released}')
-        returning *;
-      `
-      )
-      .then((dbRes) => {
-        res.status(200).send(dbRes[0]);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
-
-  addMovie: (req, res) => {
-    const addMovieToDatabase = (req, res) => {
-      const { Title, Poster, Genre, Actors, Plot, Rated, Released } = req;
-      sequelize
-        .query(
-          `
-        insert into movie_table (movie_title, movie_poster, movie_genre, movie_actors, movie_plot, movie_rating, movie_release_date)
-          values ('${Title}', '${Poster}', '${Genre}', '${Actors}', '${Plot}', '${Rated}', '${Released}');
-        `
-        )
-        .then((dbRes) => {
-          // res.send(dbRes[0]);
-          console.log(dbRes);
-          // res.sendStatus(200);
-          // console.log(dbRes[0]);
-          //had to take out .status(200) it was giving me an error//
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-
+  addMovie: async (req, res) => {
     const { imdbID } = req.body.id;
 
     const options = {
@@ -77,28 +37,71 @@ module.exports = {
         "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
       },
     };
+    let movieInfo;
 
-    axios
+    await axios
       .request(options)
-      .then(function (res) {
-        addMovieToDatabase(res.data);
-        console.log(`Here is data ${res.data}`);
+      .then(async function (apiRes) {
+        const { Title, Poster, Genre, Actors, Rated, Year } = apiRes.data;
+        const title = Title.replace("'", "''");
+        const poster = Poster.replace("'", "''");
+        const genre = Genre.replace("'", "''");
+        const actors = Actors.replace("'", "''");
+        const rated = Rated.replace("'", "''");
+        const year = Year.replace("'", "''");
+
+        await sequelize
+          .query(
+            `
+        insert into movie_table (movie_title, movie_poster, movie_genre, movie_actors, movie_rating, movie_year)
+          values ('${title}', '${poster}', '${genre}', '${actors}', '${rated}', '${year}');
+        `
+          )
+          .then((dbRes) => {
+            console.log(dbRes);
+            movieInfo = dbRes[0];
+            console.log("successful");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch(function (error) {
         console.error(error);
+      });
+    if (movieInfo) {
+      res.status(200).send("Movie was successfully added.");
+    } else {
+      res.status(500).send("Problem adding movie.");
+    }
+  },
+
+  getAllWants: (req, res) => {
+    sequelize
+      .query(`SELECT * FROM movie_wants`)
+      .then((dbRes) => {
+        res.status(200).send(dbRes[0]);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   },
 
   // addToFavorites: (req, res) => {}, feature to add later.
   addToWants: (req, res) => {
-    console.log(req.body);
-    const { Title, Poster, imdbID } = req.body;
+    console.log(req.body.id);
+    const { Title, Poster, Year, imdbID } = req.body.id;
+    const title = Title.replace("'", "''");
+    const poster = Poster.replace("'", "''");
+    const year = Year.replace("'", "''");
+
     sequelize
       .query(
         `
-      insert into movie_wants (movie_title, movie_poster, imdbID)
-        values ('${Title}', '${Poster}', '${imdbID}')
-      `
+      insert into movie_wants (movie_title, movie_poster, movie_year, imdbID)
+        values ('${title}', '${poster}', '${year}', '${imdbID}')
+
+      ` //add the delete request after the insert request.
       )
       .then((dbRes) => {
         res.status(200).send(dbRes[0]);
@@ -108,40 +111,71 @@ module.exports = {
       });
   },
 
-  addFromWants: (req, res) => {
-    /*To enable a backend api request to the rapid API, I wonder if I can write an axios request, that in the response will trigger a
-    sequelize querey to directly send the api response to the database?*/
-    console.log(req.body);
-    const { Title, Poster, Genre, Actors, Plot, Rated, Released, id } =
-      req.body;
-    sequelize
-      .query(
-        `insert into movie_table (movie_title, movie_genre, movie_actors, movie_plot, movie_rating, movie_release_date)
-        values ('${Title}', '${Poster}', '${Genre}', '${Actors}', '${Plot}', '${Rated}', '${Released}')
-        returning *;
+  addFromWants: async (req, res) => {
+    console.log("******", req.body.id, "******");
+    const { imdbid } = req.body.id;
 
-        delete from movie_wants
-        where wants_id = '${id}'
-      `
-      )
-      .then((dbRes) => {
-        res.status(200).send(dbRes[0]);
+    const options = {
+      method: "GET",
+      url: "https://movie-database-alternative.p.rapidapi.com/",
+      params: { r: "json", i: `${imdbid}` },
+      headers: {
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+        "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
+      },
+    };
+    let movieInfo;
+    await axios
+      .request(options)
+      .then(async function (apiRes) {
+        console.log("$$$$$$$", apiRes.data, "$$$$$$$");
+        const { Title, Poster, Genre, Actors, Rated, Year, imdbID } =
+          apiRes.data;
+        const title = Title.replace("'", "''");
+        const poster = Poster.replace("'", "''");
+        const genre = Genre.replace("'", "''");
+        const actors = Actors.replace("'", "''");
+        const rated = Rated.replace("'", "''");
+        const year = Year.replace("'", "''");
+        await sequelize
+          .query(
+            `
+        insert into movie_table (movie_title, movie_poster, movie_genre, movie_actors, movie_rating, movie_year)
+          values ('${title}', '${poster}', '${genre}', '${actors}', '${rated}', '${year}');
+
+        delete 
+        FROM movie_wants
+        WHERE imdbID = '${imdbID}';
+        `
+          )
+          .then((dbRes) => {
+            console.log(dbRes);
+            movieInfo = dbRes[0];
+            console.log("successful");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(function (error) {
+        console.error(error);
       });
-  }, //this will be a post and a delete. Delete from wants post to movie collection.
+    if (movieInfo) {
+      res.status(200).send("Movie was successfully added.");
+    } else {
+      res.status(500).send("Problem adding movie.");
+    }
+  },
 
   deleteMovie: (req, res) => {
-    console.log(req.params);
-    const { id } = req.params;
+    // console.log("--------------", req.body.id, "--------------");
+    const { movie_id } = req.body.id;
+    // console.log("--------------", movie_id, "--------------");
     sequelize
       .query(
         `DELETE FROM movie_table
-          WHERE movie_id = '${id}';
-          
-        Delete from movie_collection
-          where movie_id = '${id}`
+          WHERE movie_id = ${movie_id};
+        `
       )
       .then((dbRes) => {
         res.status(200).send(dbRes[0]);

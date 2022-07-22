@@ -31,6 +31,14 @@ const MovieApi = ({ location }) => {
     setSearch("");
   };
 
+  const handleKeypress = (e) => {
+    //it triggers by pressing the enter key
+    if (e.keyCode === 13) {
+      setSearch(e.target.value);
+      apiCall();
+    }
+  };
+
   return (
     <div>
       <h3>MovieApi component</h3>
@@ -38,9 +46,12 @@ const MovieApi = ({ location }) => {
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        onKeyDown={handleKeypress}
         placeholder="Movie Title"
       />
-      <button onClick={apiCall}>Search</button>
+      <button className="search-button" onClick={apiCall} type="submit">
+        Search
+      </button>
       <MovieApiResponse data={data} location={location} />
     </div>
   );

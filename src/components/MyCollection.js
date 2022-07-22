@@ -1,26 +1,16 @@
 import React from "react";
+// import { Link } from "react-router-dom";
 import GetCollection from "./GetCollection";
+import "../styles/mycollection.css";
 
 const MyCollection = () => {
   return (
     <div>
-      <br />
-      MyCollection title
-      <br />
-      -movie filtering options
-      <div>
-        -filter alphabetical
-        <br />
-        -filter genre
-        <br />
-        -filter rating
-      </div>
-      <br />
-      -display movie poster and name
-      <br />
-      -15 movies per page
-      <br />
-      -page changing options
+      {/* <nav className="add-collection-wrapper">
+        <Link to="/addmovies">
+          <button className="add-movie-button">Add Movie</button>
+        </Link>
+      </nav> */}
       <GetCollection />
     </div>
   );
