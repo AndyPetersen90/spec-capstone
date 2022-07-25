@@ -1,0 +1,78 @@
+.movie-api-search-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-api-title {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 200%;
+}
+
+.search-and-submit-button {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 150%;
+  margin-bottom: 1%;
+}
+
+.movie-api-input-box {
+  width: 80%;
+  font-size: 90%;
+}
+
+.search-button {
+  width: 15%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  font-size: 100%;
+  border: none;
+  border-color: aliceblue;
+  box-shadow: inset 0px 0px 7px 2px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+  .search-and-submit-button {
+    font-size: 125%;
+  }
+  .movie-api-title {
+    font-size: 150%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .search-and-submit-button {
+    font-size: 125%;
+  }
+  .movie-api-input-box {
+    width: 70%;
+  }
+  .search-button {
+    box-shadow: inset 0px 0px 7px 2px;
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .search-and-submit-button {
+    font-size: 125%;
+  }
+  .movie-api-input-box {
+    width: 70%;
+  }
+  .search-button {
+    box-shadow: inset 0px 0px 7px 2px;
+    width: 25%;
+    font-size: 75%;
+  }
+}

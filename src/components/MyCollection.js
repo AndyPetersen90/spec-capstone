@@ -1,7 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import GetCollection from "./GetCollection";
-import "../styles/mycollection.css";
 
 const MyCollection = () => {
   return (

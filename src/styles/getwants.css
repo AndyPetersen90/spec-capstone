@@ -1,27 +1,9 @@
-.nav-header {
-  margin: 0%;
-  padding-top: 1%;
-}
-
-.nav-bar {
+.add-wants-wrapper {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
-.button-wrapper {
-  display: flex;
-  width: max-content;
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  flex-direction: row;
-  align-items: center;
-}
-
-.Nav-button {
-  margin: 0.5%;
+.add-wants-button {
   padding: 5%;
   width: 15vw;
   background-color: rgb(255, 255, 255);
@@ -35,18 +17,18 @@
 }
 
 @media screen and (max-width: 1500px) {
-  .Nav-button {
+  .add-wants-button {
     font-size: 100%;
   }
 }
 
 @media screen and (max-width: 1050px) {
-  .Nav-button {
+  .add-wants-button {
     width: 15vw;
-    font-size: 100%;
+    font-size: 90%;
     box-shadow: inset 0px 0px 7px 2px;
     padding: 1vh;
     margin: 1vh;
-    min-width: 120px;
+    min-width: 100px;
   }
 }

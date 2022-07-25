@@ -112,19 +112,31 @@ const MovieCard = ({ data, location, getMovieWants, getMovieCollection }) => {
       <h4 className="movie-card-rating">
         {data.Year || data.movie_release_date || data.movie_year}
       </h4>
-      {location === "addToCollection" ? (
-        <button onClick={() => addMovieAxiosCall(data.imbdbId)}>
+
+      {location === "fromWantsToCollection" ? (
+        <button className="movie-card-button" onClick={addWantsToCollection}>
+          Add To Collection
+        </button>
+      ) : null}
+      {location === "inMovieCollection" ? (
+        <button className="movie-card-button" onClick={removeFromCollection}>
+          Remove
+        </button>
+      ) : null}
+      {location !== "inMovieCollection" &&
+      location !== "fromWantsToCollection" ? (
+        <button
+          className="movie-card-button"
+          onClick={() => addMovieAxiosCall(data.imbdbId)}
+        >
           Add To Movie Collection
         </button>
       ) : null}
-      {location === "addToWants" ? (
-        <button onClick={addToWantsList}>Add To Wants List</button>
-      ) : null}
-      {location === "fromWantsToCollection" ? (
-        <button onClick={addWantsToCollection}>Add To Collection</button>
-      ) : null}
-      {location === "inMovieCollection" ? (
-        <button onClick={removeFromCollection}>Remove</button>
+      {location !== "inMovieCollection" &&
+      location !== "fromWantsToCollection" ? (
+        <button className="movie-card-button" onClick={addToWantsList}>
+          Add To Wants List
+        </button>
       ) : null}
     </div>
   );

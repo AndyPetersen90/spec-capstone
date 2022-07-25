@@ -15,7 +15,7 @@
   margin: 0.5%;
   padding: 5%;
   width: 15vw;
-  background-color: rgb(216 216 216);
+  background-color: rgb(255, 255, 255);
   border-radius: 50px;
   font-size: 175%;
   border: none;
@@ -29,6 +29,23 @@
   display: flex;
   flex-direction: row;
 }
+
+@media screen and (max-width: 1500px) {
+  .add-movie-button {
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .add-movie-button {
+    width: 15vw;
+    font-size: 90%;
+    box-shadow: inset 0px 0px 7px 2px;
+    padding: 1vh;
+    margin: 1vh;
+    min-width: 100px;
+  }
+}
 /********************* Filtering Section *****************/
 
 .genre-dropdown {
@@ -36,9 +53,9 @@
   margin: 0.5%;
   padding: 0.5%;
   width: 15vw;
-  background-color: rgb(216 216 216);
+  background-color: rgb(255, 255, 255);
   border-radius: 50px;
-  font-size: 175%;
+  font-size: 150%;
   border: none;
   border-color: aliceblue;
   box-shadow: inset 0px 0px 11px 5px;
@@ -56,9 +73,9 @@
   margin: 0.5%;
   padding: 0.5%;
   width: 15vw;
-  background-color: rgb(216 216 216);
+  background-color: rgb(255, 255, 255);
   border-radius: 50px;
-  font-size: 175%;
+  font-size: 150%;
   border: none;
   border-color: aliceblue;
   box-shadow: inset 0px 0px 11px 5px;
@@ -76,7 +93,7 @@
   margin: 0.5%;
   padding: 0.5%;
   width: 15vw;
-  background-color: rgb(216 216 216);
+  background-color: rgb(255, 255, 255);
   border-radius: 50px;
   font-size: 175%;
   border: none;
@@ -85,6 +102,107 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 1500px) {
+  .genre-dropdown {
+    font-size: 100%;
+  }
+  .rating-dropdown {
+    font-size: 100%;
+  }
+  .dropdown-reset-button {
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .main-filter-div-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .add-form-div-wrapper {
+    display: block;
+    flex-direction: column;
+  }
+  .dropdown-form {
+    flex-direction: column;
+  }
+  .genre-dropdown {
+    width: 15vw;
+    font-size: 90%;
+    box-shadow: inset 0px 0px 7px 2px;
+    background-position: right 0.5rem center;
+    background-size: 1em;
+    padding: 1vh;
+    padding-right: 3vw;
+    margin: 1vh;
+  }
+  .rating-dropdown {
+    width: 15vw;
+    font-size: 90%;
+    box-shadow: inset 0px 0px 7px 2px;
+    background-position: right 0.5rem center;
+    background-size: 1em;
+    padding: 1vh;
+    padding-right: 3vw;
+    margin: 1vh;
+  }
+  .dropdown-reset-button {
+    width: 15vw;
+    font-size: 90%;
+    box-shadow: inset 0px 0px 7px 2px;
+    background-position: right 0.5rem center;
+    background-size: 1em;
+    padding: 1vh;
+    margin: 1vh;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .main-filter-div-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .add-form-div-wrapper {
+    display: block;
+    flex-direction: column;
+  }
+  .dropdown-form {
+    flex-direction: column;
+  }
+  .genre-dropdown {
+    width: 15vw;
+    font-size: 70%;
+    box-shadow: inset 0px 0px 7px 2px;
+    background-position: right 0.5rem center;
+    background-size: 1em;
+    padding: 1vh;
+    padding-right: 3vw;
+    margin: 1vh;
+    min-width: 100px;
+  }
+  .rating-dropdown {
+    width: 15vw;
+    font-size: 70%;
+    box-shadow: inset 0px 0px 7px 2px;
+    background-position: right 0.5rem center;
+    background-size: 1em;
+    padding: 1vh;
+    padding-right: 3vw;
+    margin: 1vh;
+    min-width: 100px;
+  }
+  .dropdown-reset-button {
+    width: 15vw;
+    font-size: 90%;
+    box-shadow: inset 0px 0px 7px 2px;
+    background-position: right 0.5rem center;
+    background-size: 1em;
+    padding: 1vh;
+    margin: 1vh;
+    min-width: 100px;
+  }
 }
 
 /*************** Movie Card Section *******************/

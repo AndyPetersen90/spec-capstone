@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MovieApiResponse from "./MovieApiResponse";
 import axios from "axios";
+import "../styles/addmovies.css";
 
 const MovieApi = ({ location }) => {
   const [data, setData] = useState([]);
@@ -40,18 +41,21 @@ const MovieApi = ({ location }) => {
   };
 
   return (
-    <div>
-      <h3>MovieApi component</h3>
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        onKeyDown={handleKeypress}
-        placeholder="Movie Title"
-      />
-      <button className="search-button" onClick={apiCall} type="submit">
-        Search
-      </button>
+    <div className="movie-api-search-container">
+      <h3 className="movie-api-title">Lets Add A Movie!</h3>
+      <div className="search-and-submit-button">
+        <input
+          className="movie-api-input-box"
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKeypress}
+          placeholder="Movie Title"
+        />
+        <button className="search-button" onClick={apiCall} type="submit">
+          Search
+        </button>
+      </div>
       <MovieApiResponse data={data} location={location} />
     </div>
   );

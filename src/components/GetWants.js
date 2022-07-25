@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import { Link } from "react-router-dom";
+import "../styles/getwants.css";
 
 const GetWants = () => {
   const [wantedMovies, setWantedMovies] = useState([]);
@@ -27,6 +29,11 @@ const GetWants = () => {
 
   return (
     <div>
+      <nav className="add-wants-wrapper">
+        <Link to="/addmovies">
+          <button className="add-wants-button">Add Movie</button>
+        </Link>
+      </nav>
       <section className="movie-api-response-section">
         {wantedMovies.map((data) => (
           <MovieCard

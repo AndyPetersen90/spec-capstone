@@ -1,18 +1,60 @@
 .welcome-text-div {
+  margin: 2%;
+  padding: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  width: 95%;
+  max-width: 100%;
+  background-image: url("../images/Film-strip.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .home-welcome-main {
-  font-size: 20px;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  font-size: 400%;
+  margin-top: 9%;
+  margin-bottom: 0%;
+  padding: 3%;
+  color: black;
 }
 
 .home-welcome-text {
-  font-size: 20px;
+  font-size: 300%;
   margin-top: 1%;
   margin-bottom: 1%;
+  color: black;
+}
+
+.home-welcome-text-2 {
+  font-size: 300%;
+  margin-top: 1%;
+  margin-bottom: 12%;
+  color: black;
+}
+
+@media screen and (max-width: 1550px) {
+  .home-welcome-main {
+    font-size: 200%;
+  }
+  .home-welcome-text {
+    font-size: 200%;
+  }
+  .home-welcome-text-2 {
+    font-size: 200%;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .home-welcome-main {
+    font-size: 150%;
+  }
+  .home-welcome-text {
+    font-size: 150%;
+  }
+  .home-welcome-text-2 {
+    font-size: 150%;
+  }
 }

@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import "../styles/moviefilter.css";
 import { Link } from "react-router-dom";
 
-const MovieFilter = ({ data, location, getMovieCollection }) => {
+const MovieFilter = ({ data, getMovieCollection }) => {
   const [filterGenre, setFilterGenre] = useState("Genre");
   const [filterRating, setFilterRating] = useState("Rating");
 
@@ -30,11 +30,9 @@ const MovieFilter = ({ data, location, getMovieCollection }) => {
       arrayGenre.push(element.trim());
     }
   });
-  // console.log(arrayGenre);
-  // console.log(arrayRating);
 
   return (
-    <div>
+    <div className="main-filter-div-container">
       <div className="add-form-div-wrapper">
         <nav className="add-collection-wrapper">
           <Link to="/addmovies">
@@ -82,7 +80,6 @@ const MovieFilter = ({ data, location, getMovieCollection }) => {
               return data;
             }
           })
-          // .filter((data) => data.movie_rating.includes(filterRating))
           .filter((data) => {
             if (filterRating.length < 6) {
               return data.movie_rating.length === filterRating.length;
@@ -93,7 +90,7 @@ const MovieFilter = ({ data, location, getMovieCollection }) => {
           .map((data) => (
             <MovieCard
               data={data}
-              location={location}
+              location={"inMovieCollection"}
               getMovieCollection={getMovieCollection}
             />
           ))}

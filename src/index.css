@@ -28,6 +28,6 @@ body {
   }
   body {
     background: url("../public/space-background-img.png") no-repeat;
-    background-size: cover;
+    background-size: auto;
   }
 }
