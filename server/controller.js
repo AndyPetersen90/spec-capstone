@@ -43,12 +43,12 @@ module.exports = {
       .request(options)
       .then(async function (apiRes) {
         const { Title, Poster, Genre, Actors, Rated, Year } = apiRes.data;
-        const title = Title.replace("'", "''");
-        const poster = Poster.replace("'", "''");
-        const genre = Genre.replace("'", "''");
-        const actors = Actors.replace("'", "''");
-        const rated = Rated.replace("'", "''");
-        const year = Year.replace("'", "''");
+        const title = Title.replaceAll("'", "''");
+        const poster = Poster.replaceAll("'", "''");
+        const genre = Genre.replaceAll("'", "''");
+        const actors = Actors.replaceAll("'", "''");
+        const rated = Rated.replaceAll("'", "''");
+        const year = Year.replaceAll("'", "''");
 
         await sequelize
           .query(
@@ -91,9 +91,9 @@ module.exports = {
   addToWants: (req, res) => {
     console.log(req.body.id);
     const { Title, Poster, Year, imdbID } = req.body.id;
-    const title = Title.replace("'", "''");
-    const poster = Poster.replace("'", "''");
-    const year = Year.replace("'", "''");
+    const title = Title.replaceAll("'", "''");
+    const poster = Poster.replaceAll("'", "''");
+    const year = Year.replaceAll("'", "''");
 
     sequelize
       .query(
@@ -131,12 +131,12 @@ module.exports = {
         console.log("$$$$$$$", apiRes.data, "$$$$$$$");
         const { Title, Poster, Genre, Actors, Rated, Year, imdbID } =
           apiRes.data;
-        const title = Title.replace("'", "''");
-        const poster = Poster.replace("'", "''");
-        const genre = Genre.replace("'", "''");
-        const actors = Actors.replace("'", "''");
-        const rated = Rated.replace("'", "''");
-        const year = Year.replace("'", "''");
+        const title = Title.replaceAll("'", "''");
+        const poster = Poster.replaceAll("'", "''");
+        const genre = Genre.replaceAll("'", "''");
+        const actors = Actors.replaceAll("'", "''");
+        const rated = Rated.replaceAll("'", "''");
+        const year = Year.replaceAll("'", "''");
         await sequelize
           .query(
             `

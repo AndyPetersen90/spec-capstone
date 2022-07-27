@@ -29,5 +29,6 @@ body {
   body {
     background: url("../public/space-background-img.png") no-repeat;
     background-size: auto;
+    background-attachment: fixed;
   }
 }
