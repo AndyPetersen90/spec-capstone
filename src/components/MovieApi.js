@@ -13,7 +13,8 @@ const MovieApi = ({ location }) => {
         method: "GET",
         url: "https://movie-database-alternative.p.rapidapi.com/",
         headers: {
-          "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+          "X-RapidAPI-Key":
+            process.env.REACT_APP_RAPID_API_KEY || process.env.HEROKU_KEY,
           "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
         },
         params: { s: search, r: "json", page: "1" },
