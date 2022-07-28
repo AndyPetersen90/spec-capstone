@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-// const path = require("path");
+const path = require("path");
 const app = express();
 const { seed } = require("./seed.js");
 const {
@@ -17,6 +17,8 @@ require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 
+app.use(express.static(path.resolve(__dirname, "../build")));
+
 //front end requests//
 
 app.get("/mycollection", getAllMovies);
@@ -29,6 +31,10 @@ app.delete("/deletecollection", deleteMovie);
 
 //server//
 app.post("/seed", seed);
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
+});
 
 //Not sure if this is necessary//
 app.listen(process.env.PORT || 5005, function () {
