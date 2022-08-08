@@ -10,6 +10,7 @@ const {
   addToWants,
   addFromWants,
   deleteMovie,
+  // apiCall,
   //   addToFavorites,
 } = require("./controller");
 
@@ -22,6 +23,7 @@ app.use(express.static(path.resolve(__dirname, "../build")));
 //front end requests//
 
 app.get("/mycollection", getAllMovies);
+// app.put("/apisearch", apiCall);
 app.post("/addcollection", addMovie);
 app.get("/wants", getAllWants);
 app.post("/addtowants", addToWants);

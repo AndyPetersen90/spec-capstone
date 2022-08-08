@@ -25,6 +25,34 @@ module.exports = {
       });
   },
 
+  // apiCall: async (req, res) => {
+  //   console.log("************", req.data);
+  //   console.log("!!!!!!!!!!!!", req.params);
+  //   if (req.body) {
+  //     const options = {
+  //       method: "GET",
+  //       url: "https://movie-database-alternative.p.rapidapi.com/",
+  //       headers: {
+  //         "X-RapidAPI-Key":
+  //           process.env.REACT_APP_RAPID_API_KEY || process.env.HEROKU_KEY,
+  //         "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
+  //       },
+  //       params: { s: "hook", r: "json", page: "1" },
+  //     };
+
+  //     await axios
+  //       .request(options)
+  //       .then(function (response) {
+  //         console.log("%%%%%%%%%%%%%%%%", response.status);
+  //         res.status(200).send(response.data);
+  //         // setData(response.data.Search);
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error);
+  //       });
+  //   }
+  // },
+
   addMovie: async (req, res) => {
     const { imdbID } = req.body.id;
 
