@@ -23,13 +23,13 @@ app.use(express.static(path.resolve(__dirname, "../build")));
 //front end requests//
 
 app.get("/mycollection", getAllMovies);
-// app.put("/apisearch", apiCall);
 app.post("/addcollection", addMovie);
 app.get("/wants", getAllWants);
 app.post("/addtowants", addToWants);
-// app.post("/wants", addToFavorites);
 app.post("/fromwants", addFromWants);
 app.delete("/deletecollection", deleteMovie);
+// app.put("/apisearch", apiCall);
+// app.post("/wants", addToFavorites);
 
 //server//
 app.post("/seed", seed);

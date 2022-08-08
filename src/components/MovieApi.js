@@ -9,30 +9,6 @@ const MovieApi = ({ location }) => {
 
   const apiCall = async () => {
     if (search) {
-      // var data = JSON.stringify({
-      //   search: search,
-      // });
-
-      // var config = {
-      //   method: "put",
-      //   url: "/apisearch/:search",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   data: data,
-      // };
-
-      // axios(config)
-      //   .then(function (response) {
-      //     alert("Movie Search Response has been received");
-      //     console.log("$$$$$$$$$$$$$", response.data.Search);
-      //     // setData(response.data.Search);
-      //   })
-      //   .catch(function (error) {
-      //     alert(error);
-      //     console.log(error);
-      //   });
-
       const options = {
         method: "GET",
         url: "https://movie-database-alternative.p.rapidapi.com/",
