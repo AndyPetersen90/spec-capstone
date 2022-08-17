@@ -10,8 +10,7 @@ const {
   addToWants,
   addFromWants,
   deleteMovie,
-  // apiCall,
-  //   addToFavorites,
+  apiCall,
 } = require("./controller");
 
 require("dotenv").config();
@@ -22,14 +21,13 @@ app.use(express.static(path.resolve(__dirname, "../build")));
 
 //front end requests//
 
+app.get("/movie/:search", apiCall);
 app.get("/mycollection", getAllMovies);
 app.post("/addcollection", addMovie);
 app.get("/wants", getAllWants);
 app.post("/addtowants", addToWants);
 app.post("/fromwants", addFromWants);
 app.delete("/deletecollection", deleteMovie);
-// app.put("/apisearch", apiCall);
-// app.post("/wants", addToFavorites);
 
 //server//
 app.post("/seed", seed);

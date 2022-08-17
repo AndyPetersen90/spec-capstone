@@ -14,6 +14,7 @@ const GetCollection = () => {
     axios(config)
       .then(function (response) {
         console.log(response.data);
+        console.log(response);
         setCollectedMovies(response.data);
       })
       .catch(function (error) {

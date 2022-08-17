@@ -7,31 +7,44 @@ const MovieApi = ({ location }) => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
 
-  const apiCall = async () => {
-    if (search) {
-      const options = {
-        method: "GET",
-        url: "https://movie-database-alternative.p.rapidapi.com/",
-        headers: {
-          "X-RapidAPI-Key":
-            process.env.REACT_APP_RAPID_API_KEY || process.env.HEROKU_KEY,
-          "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
-        },
-        params: { s: search, r: "json", page: "1" },
-      };
-
-      await axios
-        .request(options)
-        .then(function (response) {
-          setData(response.data.Search);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    }
-
+  const apiCall = () => {
+    axios
+      .get(`/movie/${search}`)
+      .then(function (response) {
+        // console.log(response.data);
+        setData(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
     setSearch("");
   };
+
+  // const apiCall = async () => {
+  //   if (search) {
+  //     const options = {
+  //       method: "GET",
+  //       url: "https://movie-database-alternative.p.rapidapi.com/",
+  //       headers: {
+  //         "X-RapidAPI-Key":
+  //           process.env.REACT_APP_RAPID_API_KEY || process.env.HEROKU_KEY,
+  //         "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
+  //       },
+  //       params: { s: search, r: "json", page: "1" },
+  //     };
+
+  //     await axios
+  //       .request(options)
+  //       .then(function (response) {
+  //         setData(response.data.Search);
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error);
+  //       });
+  //   }
+
+  //   setSearch("");
+  // };
 
   const handleKeypress = (e) => {
     //it triggers by pressing the enter key

@@ -14,6 +14,35 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 });
 
 module.exports = {
+  apiCall: async (req, res) => {
+    let search = req.params.search;
+    // console.log(search);
+
+    if (search) {
+      const options = {
+        method: "GET",
+        url: "https://movie-database-alternative.p.rapidapi.com/",
+        headers: {
+          "X-RapidAPI-Key":
+            process.env.REACT_APP_RAPID_API_KEY || process.env.HEROKU_KEY,
+          "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
+        },
+        params: { s: search, r: "json", page: "1" },
+      };
+
+      await axios
+        .request(options)
+        .then(function (response) {
+          // setData(response.data.Search);
+          // console.log(response.data.Search);
+          res.status(200).send(response.data.Search);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  },
+
   getAllMovies: (req, res) => {
     sequelize
       .query(`SELECT * FROM movie_table`)
