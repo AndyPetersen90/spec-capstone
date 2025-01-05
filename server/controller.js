@@ -23,9 +23,8 @@ module.exports = {
         method: "GET",
         url: "https://movie-database-alternative.p.rapidapi.com/",
         headers: {
-          "X-RapidAPI-Key":
-            process.env.REACT_APP_RAPID_API_KEY || process.env.HEROKU_KEY,
-          "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
+          "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
+          "x-rapidapi-host": "movie-database-alternative.p.rapidapi.com",
         },
         params: { s: search, r: "json", page: "1" },
       };
@@ -34,7 +33,6 @@ module.exports = {
         .request(options)
         .then(function (response) {
           // setData(response.data.Search);
-          // console.log(response.data.Search);
           res.status(200).send(response.data.Search);
         })
         .catch(function (error) {
@@ -158,8 +156,7 @@ module.exports = {
       .request(options)
       .then(async function (apiRes) {
         console.log("$$$$$$$", apiRes.data, "$$$$$$$");
-        const { Title, Poster, Genre, Actors, Rated, Year, imdbID } =
-          apiRes.data;
+        const { Title, Poster, Genre, Actors, Rated, Year, imdbID } = apiRes.data;
         const title = Title.replaceAll("'", "''");
         const poster = Poster.replaceAll("'", "''");
         const genre = Genre.replaceAll("'", "''");
